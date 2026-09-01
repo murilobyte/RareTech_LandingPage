@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rare Tech — Software sob medida para sua operação</title>
+<meta name="description" content="A Rare Tech desenvolve software sob medida que roda sobre a regra da sua operação: orçamento por processo, time fixo e sênior, e o código na sua mão no fim.">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" href="src/svg/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#000000">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ============================================================
+     PRELOADER
+     ============================================================ -->
+<div class="preloader" id="preloader" aria-hidden="true" style="display:none">
+  <div class="preloader-grid" id="preloaderGrid"></div>
+  <div class="preloader-logo">{ }</div>
+  <div class="preloader-curtain" id="preloaderCurtain">
+    <i></i><i></i><i></i><i></i><i></i><i></i>
+  </div>
+</div>
+
+<!-- ============================================================
+     CURSOR CUSTOMIZADO
+     ============================================================ -->
+<div class="cursor" id="cursor" aria-hidden="true">
+  <div class="cursor-ring" id="cursorRing"><span id="cursorLabel"></span></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+</div>
+
+<!-- ============================================================
+     1. HEADER
+     ============================================================ -->
+<header class="site-header" id="siteHeader">
+  <div class="container header-bar">
+    <a class="brand" href="#inicio" aria-label="Rare Tech — início">
+      <svg class="brand-mark" aria-hidden="true" focusable="false" viewBox="0 0 285 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M262.641 34.8304V1.70544H269.348V12.9679H270.342C270.894 11.919 271.653 11.0633 272.62 10.4008C273.613 9.71065 274.98 9.3656 276.719 9.3656C279.479 9.3656 281.549 10.2351 282.93 11.9742C284.31 13.7133 285 16.0734 285 19.0547V34.8304H278.292V20.1726C278.292 18.4612 277.989 17.15 277.381 16.239C276.774 15.3005 275.78 14.8312 274.4 14.8312C272.799 14.8312 271.557 15.4661 270.673 16.7359C269.79 17.9781 269.348 19.5377 269.348 21.4148V34.8304H262.641Z" fill="currentColor"/>
+      <path d="M247.117 35.4515C243.28 35.4515 240.354 34.2783 238.339 31.932C236.323 29.5856 235.316 26.4112 235.316 22.4086C235.316 18.1851 236.379 14.9554 238.504 12.7195C240.657 10.4836 243.556 9.3656 247.2 9.3656C250.484 9.3656 253.065 10.2351 254.942 11.9742C256.82 13.7133 257.938 16.0872 258.296 19.0961H251.671C251.478 17.4674 250.995 16.2252 250.222 15.3695C249.449 14.5138 248.455 14.0859 247.241 14.0859C245.64 14.0859 244.411 14.8036 243.556 16.239C242.7 17.6744 242.272 19.731 242.272 22.4086C242.272 25.0862 242.686 27.1427 243.514 28.5781C244.37 30.0135 245.598 30.7312 247.2 30.7312C248.442 30.7312 249.449 30.3033 250.222 29.4476C250.995 28.5643 251.478 27.3221 251.671 25.7211H258.296C257.91 28.6747 256.764 31.0349 254.86 32.8015C252.983 34.5682 250.402 35.4515 247.117 35.4515Z" fill="currentColor"/>
+      <path d="M221.26 35.4515C217.34 35.4515 214.345 34.2783 212.275 31.932C210.232 29.5856 209.21 26.3974 209.21 22.3672C209.21 19.6619 209.666 17.3432 210.577 15.4109C211.515 13.4786 212.868 11.988 214.635 10.939C216.429 9.89008 218.61 9.3656 221.177 9.3656C224.876 9.3656 227.705 10.4836 229.665 12.7195C231.653 14.9554 232.646 18.2403 232.646 22.5742V23.982H215.753C215.891 26.0799 216.429 27.7362 217.367 28.9507C218.334 30.1377 219.631 30.7312 221.26 30.7312C222.557 30.7312 223.592 30.3448 224.365 29.5718C225.166 28.7989 225.69 27.9018 225.939 26.8804H232.315C232.067 28.3987 231.515 29.8065 230.659 31.1039C229.803 32.4013 228.602 33.4502 227.057 34.2507C225.511 35.0513 223.578 35.4515 221.26 35.4515ZM215.753 19.7586H226.104C225.994 17.8815 225.524 16.4323 224.696 15.4109C223.868 14.362 222.681 13.8375 221.135 13.8375C219.617 13.8375 218.389 14.3343 217.45 15.3281C216.539 16.2942 215.973 17.7711 215.753 19.7586Z" fill="currentColor"/>
+      <path d="M192.504 34.8305V7.99931H182.939V2.53369H209.025V7.99931H199.461V34.8305H192.504Z" fill="currentColor"/>
+      <path d="M159.102 35.4515C155.182 35.4515 152.187 34.2783 150.117 31.932C148.074 29.5856 147.052 26.3974 147.052 22.3672C147.052 19.6619 147.508 17.3432 148.419 15.4109C149.357 13.4786 150.71 11.988 152.477 10.939C154.271 9.89008 156.452 9.3656 159.019 9.3656C162.718 9.3656 165.547 10.4836 167.507 12.7195C169.495 14.9554 170.488 18.2403 170.488 22.5742V23.982H153.595C153.733 26.0799 154.271 27.7362 155.21 28.9507C156.176 30.1377 157.473 30.7312 159.102 30.7312C160.399 30.7312 161.434 30.3448 162.207 29.5718C163.008 28.7989 163.532 27.9018 163.781 26.8804H170.157C169.909 28.3987 169.357 29.8065 168.501 31.1039C167.645 32.4013 166.444 33.4502 164.899 34.2507C163.353 35.0513 161.42 35.4515 159.102 35.4515ZM153.595 19.7586H163.946C163.836 17.8815 163.367 16.4323 162.538 15.4109C161.71 14.362 160.523 13.8375 158.977 13.8375C157.459 13.8375 156.231 14.3343 155.292 15.3281C154.381 16.2942 153.816 17.7711 153.595 19.7586Z" fill="currentColor"/>
+      <path d="M130.43 34.8305V9.98672H136.558V14.5414H137.552C137.717 13.7133 138.021 12.9404 138.463 12.2227C138.932 11.4773 139.636 10.8839 140.574 10.4422C141.513 9.97292 142.769 9.73828 144.342 9.73828H145.667V15.7836H143.846C141.499 15.7836 139.788 16.3771 138.711 17.5641C137.662 18.751 137.138 20.5315 137.138 22.9055V34.8305H130.43Z" fill="currentColor"/>
+      <path d="M110.38 35.3275C108.061 35.3275 106.156 34.7754 104.666 33.6712C103.175 32.5395 102.071 30.9936 101.353 29.0337C100.635 27.0738 100.276 24.8517 100.276 22.3673C100.276 19.8001 100.635 17.5504 101.353 15.6181C102.098 13.6858 103.216 12.1814 104.707 11.1048C106.198 10.0283 108.075 9.48999 110.338 9.48999C112.077 9.48999 113.499 9.83504 114.603 10.5251C115.735 11.1876 116.591 12.0848 117.17 13.2166H118.164V9.98687H124.375V34.8306H118.164V31.6009H117.17C116.591 32.6499 115.749 33.5332 114.644 34.2509C113.54 34.9686 112.119 35.3275 110.38 35.3275ZM112.119 30.6072C113.803 30.6072 115.141 29.8757 116.135 28.4126C117.156 26.922 117.667 24.9207 117.667 22.4087C117.667 19.8691 117.156 17.8679 116.135 16.4048C115.141 14.9418 113.803 14.2103 112.119 14.2103C110.6 14.2103 109.4 14.9004 108.516 16.2806C107.661 17.6332 107.233 19.6759 107.233 22.4087C107.233 25.1415 107.661 27.1981 108.516 28.5783C109.4 29.9309 110.6 30.6072 112.119 30.6072Z" fill="currentColor"/>
+      <path d="M71.7858 34.8305V2.53369H85.4912C88.2516 2.53369 90.4876 2.93395 92.199 3.73447C93.9381 4.50739 95.2079 5.58395 96.0084 6.96416C96.8365 8.31676 97.2506 9.8902 97.2506 11.6845C97.2506 13.7272 96.7123 15.4938 95.6358 16.9845C94.5592 18.4751 92.972 19.5378 90.874 20.1727L98.1201 34.5821V34.8305H90.7498L84.1662 21.1665H78.6592V34.8305H71.7858ZM78.6592 16.1149H84.4975C86.2917 16.1149 87.6858 15.8113 88.6795 15.204C89.7009 14.5967 90.2115 13.5063 90.2115 11.9329C90.2115 10.3319 89.7009 9.2415 88.6795 8.66181C87.6582 8.05452 86.2641 7.75088 84.4975 7.75088H78.6592V16.1149Z" fill="currentColor"/>
+      <path d="M15.7822 37.5312H9.43066V31.1797H6.35156V21.9414H12.7031V31.1797H15.7822V37.5312ZM6.35156 21.9414H0V15.5898H6.35156V21.9414ZM15.7822 6.35156H12.7031V15.5898H6.35156V6.35156H9.43066V0H15.7822V6.35156Z" fill="#976CFC"/>
+      <path d="M35.9911 37.5312H42.3427V31.1797H45.4218V21.9414H39.0702V31.1797H35.9911V37.5312ZM45.4218 21.9414H51.7733V15.5898H45.4218V21.9414ZM35.9911 6.35156H39.0702V15.5898H45.4218V6.35156H42.3427V0H35.9911V6.35156Z" fill="#976CFC"/>
+      </svg>
+    </a>
+    <nav class="nav-pill" aria-label="Navegação principal">
+      <a href="#inicio" data-scramble>Início</a>
+      <a href="#servicos" data-scramble>Serviços</a>
+      <a href="#duvidas" data-scramble>Dúvidas</a>
+      <a href="#contato" data-scramble>Contato</a>
+      <a class="btn btn--nav" href="https://wa.me/5547991521735?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Rare%20Tech%20e%20gostaria%20de%20falar%20com%20voc%C3%AAs." target="_blank" rel="noopener" data-scramble data-cursor="abrir">Fale conosco</a>
+    </nav>
+    <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav class="mobile-menu" id="mobileMenu" aria-label="Navegação mobile">
+  <a href="#inicio">Início</a>
+  <a href="#servicos">Serviços</a>
+  <a href="#duvidas">Dúvidas</a>
+  <a href="#contato">Contato</a>
+  <a class="btn btn--fill" href="https://wa.me/5547991521735?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Rare%20Tech%20e%20gostaria%20de%20falar%20com%20voc%C3%AAs." target="_blank" rel="noopener">Fale conosco</a>
+</nav>
+
+<main>
+
+<!-- ============================================================
+     2. HERO
+     ============================================================ -->
+<section class="hero" id="inicio" data-hud="INÍCIO">
+  <div class="hero-art" aria-hidden="true">
+    <img src="src/svg/world.svg" alt="" width="882" height="882" id="heroGlobe">
+    <div class="art-mask" id="artMask"></div>
+  </div>
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow" data-scramble data-scramble-lock="2" data-reveal-item>//Desenvolvimento de software customizável</p>
+        <h1 class="h1" data-split data-reveal-item><span class="brace">{</span>Software que aguenta o mundo real.<span class="brace">}</span></h1>
+        <p class="lead" data-reveal-item>A Rare Tech desenvolve o software que roda sobre a regra da sua operação, do mapeamento, do fluxo ao handover documentado, com o código na sua mão no fim.</p>
+        <div class="hero-actions" data-reveal-item>
+          <a class="btn btn--dark" href="https://wa.me/5547991521735?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Rare%20Tech%20e%20quero%20agendar%20o%20diagn%C3%B3stico%20de%2045%20minutos." target="_blank" rel="noopener" data-scramble data-cursor="agendar">Agendar diagnóstico</a>
+          <a class="btn btn--darker" href="https://wa.me/5547991521735?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Rare%20Tech%20e%20quero%20entender%20como%20voc%C3%AAs%20trabalham." target="_blank" rel="noopener" data-scramble data-cursor="abrir">Ver como trabalhamos</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     3. O SISTEMA GENÉRICO
+     ============================================================ -->
+<section class="section generic" data-hud="O CUSTO ESCONDIDO" data-theme="light">
+  <div class="container">
+    <h2 class="h2" data-split>O sistema genérico cobra o preço em outro lugar</h2>
+    <p class="intro" data-reveal-item>Ele foi feito para a média do mercado. Sua operação não é a média, e a diferença aparece todo mês, em lugares que ninguém coloca na planilha de custo do software:</p>
+
+    <div class="cards">
+      <article class="card card--right">
+        <div class="card-step card-step--2 card-shape" aria-hidden="true"></div>
+        <div class="card-step card-step--1 card-shape" aria-hidden="true"></div>
+        <div class="card-body card-shape">
+          <h3>A planilha paralela</h3>
+          <p>O que o sistema não faz, alguém faz no Excel. E aí a verdade do negócio passa a morar em dois lugares.</p>
+        </div>
+      </article>
+
+      <article class="card card--left">
+        <div class="card-step card-step--2 card-shape" aria-hidden="true"></div>
+        <div class="card-step card-step--1 card-shape" aria-hidden="true"></div>
+        <div class="card-body card-shape">
+          <h3>O retrabalho de digitação</h3>
+          <p>Mesmo dado, três sistemas, nenhuma integração.</p>
+        </div>
+      </article>
+
+      <article class="card card--right">
+        <div class="card-step card-step--2 card-shape" aria-hidden="true"></div>
+        <div class="card-step card-step--1 card-shape" aria-hidden="true"></div>
+        <div class="card-body card-shape">
+          <h3>A customização que nunca vem</h3>
+          <p>Você entra na fila do roadmap de um fornecedor que atende outros mil clientes.</p>
+        </div>
+      </article>
+
+      <article class="card card--left">
+        <div class="card-step card-step--2 card-shape" aria-hidden="true"></div>
+        <div class="card-step card-step--1 card-shape" aria-hidden="true"></div>
+        <div class="card-body card-shape">
+          <h3>A licença que sobe com o headcount</h3>
+          <p>Você cresce, e o custo cresce antes da margem.</p>
+        </div>
+      </article>
+    </div>
+
+    <p class="generic-outro" data-split>Nada disso é falha de escolha. É o limite de qualquer software que precisa servir a todo mundo.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     4. SECTION 02 — PROCESSO (scroll horizontal com pin)
+     ============================================================ -->
+<section class="s2" id="servicos" data-hud="PROCESSO">
+  <!-- Faixa horizontal (>= 1024px, sem reduced motion) -->
+  <div class="s2-viewport" id="s2Viewport">
+    <div class="s2-track" id="s2Track">
+      <div class="s2-panel s2-title">
+        <h2 class="h2" data-split>A gente parte do seu processo, <span class="brace">não de um template</span></h2>
+      </div>
+      <div class="s2-panel s2-intro">
+        <p>Mapeamos o fluxo que já existe, nomeamos as exceções que ninguém documentou e só então escrevemos a primeira linha de código. O sistema nasce falando a língua que sua equipe já fala.</p>
+      </div>
+      <div class="s2-panel s2-cols">
+        <div class="s2-col">
+          <h3 data-scramble-once>Sistemas sob medida</h3>
+          <p>Feitos para a sua regra. ERPs internos, portais de cliente, back-offices e plataformas operacionais construídos do zero sobre o seu fluxo. Sem módulo sobrando, sem campo que ninguém preenche, sem processo torto para caber na tela de outro fornecedor.</p>
+        </div>
+        <div class="s2-col">
+          <h3 data-scramble-once>Integrações</h3>
+          <p>Seus sistemas conversando entre si. Conectamos o que hoje só se comunica por digitação manual: ERPs de mercado, marketplaces, gateways de pagamento, transportadoras, sistemas legados e planilhas críticas.</p>
+        </div>
+        <div class="s2-col">
+          <h3 data-scramble-once>Licenciamento de módulos.</h3>
+          <p>O que já existe, ajustado a você. Quando já temos o módulo pronto, você licencia e economiza meses de desenvolvimento, com a customização</p>
+        </div>
+        <div class="s2-col">
+          <h3 data-scramble-once>Sustentação e evolução</h3>
+          <p>Depois do go-live também. Software vivo muda. Mantemos o sistema em pé e em evolução com SLA definido, monitoramento ativo e documentação atualizada a cada entrega.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fallback vertical (< 1024px e reduced motion) -->
+  <div class="s2-stack">
+    <div class="container">
+      <h2 class="h2">A gente parte do seu processo, <span class="brace">não de um template</span></h2>
+      <p class="s2-stack-intro">Mapeamos o fluxo que já existe, nomeamos as exceções que ninguém documentou e só então escrevemos a primeira linha de código. O sistema nasce falando a língua que sua equipe já fala.</p>
+      <div class="s2-rail">
+        <div class="s2-col">
+          <h3>Sistemas sob medida</h3>
+          <p>Feitos para a sua regra. ERPs internos, portais de cliente, back-offices e plataformas operacionais construídos do zero sobre o seu fluxo. Sem módulo sobrando, sem campo que ninguém preenche, sem processo torto para caber na tela de outro fornecedor.</p>
+        </div>
+        <div class="s2-col">
+          <h3>Integrações</h3>
+          <p>Seus sistemas conversando entre si. Conectamos o que hoje só se comunica por digitação manual: ERPs de mercado, marketplaces, gateways de pagamento, transportadoras, sistemas legados e planilhas críticas.</p>
+        </div>
+        <div class="s2-col">
+          <h3>Licenciamento de módulos.</h3>
+          <p>O que já existe, ajustado a você. Quando já temos o módulo pronto, você licencia e economiza meses de desenvolvimento, com a customização</p>
+        </div>
+        <div class="s2-col">
+          <h3>Sustentação e evolução</h3>
+          <p>Depois do go-live também. Software vivo muda. Mantemos o sistema em pé e em evolução com SLA definido, monitoramento ativo e documentação atualizada a cada entrega.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="s2-progress" id="s2Progress" aria-hidden="true"><i id="s2ProgressBar"></i></div>
+  <div class="s2-counter" id="s2Counter" aria-hidden="true">01 / 04</div>
+</section>
+
+<!-- ============================================================
+     5. SEÇÃO BINÁRIA
+     ============================================================ -->
+<section class="binary" data-hud="RARE TECH">
+  <div class="binary-bg" id="binaryBg" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="binary-block">
+      <p class="eyebrow" data-scramble-once data-scramble-lock="2">//Por que a Rare Tech</p>
+      <h2 class="h2" data-split><span class="brace">{</span>O que nos separa da fábrica de software comum<span class="brace">}</span></h2>
+      <p class="lead" data-reveal-item>O orçamento é por processo, não por tela, o número nasce do fluxo mapeado, então você sabe o que está comprando antes de assinar e o que vai custar a mais se o escopo mudar. O código é seu: repositório, documentação e propriedade intelectual entregues no fim, porque nenhum cliente nosso fica refém do próprio sistema. E o time é fixo, com poucos projetos por vez, sêniores no seu projeto do começo ao fim, sem repasse para júnior depois da assinatura e sem fila de espera silenciosa. É um jeito mais lento de crescer. É também o motivo de o sistema ainda estar de pé três anos depois.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="binary-block">
+      <p class="eyebrow" data-scramble-once data-scramble-lock="2">//Para quem funciona</p>
+      <h2 class="h2" data-split><span class="brace">{</span>Para quem funciona e para quem não funciona.<span class="brace">}</span></h2>
+      <p class="lead" data-reveal-item>Faz sentido se o seu diferencial está no processo e nenhum sistema de mercado o acompanha, se sua equipe mantém planilhas paralelas para dar conta do que o sistema não faz, ou se você tem sistemas que não conversam e paga isso em digitação manual. Não é para você se precisa de um site institucional ou de uma loja em plataforma pronta, se o prazo é para ontem e não há espaço para mapear o processo antes, ou se busca o menor preço por hora, porque não competimos nessa métrica.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     6. FAQ
+     ============================================================ -->
+<section class="section faq" id="duvidas" data-hud="FAQ" data-theme="light">
+  <div class="container faq-grid">
+    <div class="faq-aside">
+      <h2 data-split>FAQ</h2>
+      <p data-reveal-item>O que perguntam antes de fechar conosco, respondido sem rodeio.</p>
+      <p data-reveal-item>Custo, prazo, integração e o que acontece depois do go live. As respostas que damos ao vivo, por escrito.</p>
+      <a class="btn btn--on-light" href="https://wa.me/5547991521735?text=Ol%C3%A1%21%20Vim%20pelo%20FAQ%20do%20site%20da%20Rare%20Tech%20e%20fiquei%20com%20uma%20d%C3%BAvida." target="_blank" rel="noopener" data-scramble data-cursor="abrir">Falar pelo WhatsApp</a>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary><span class="faq-num">01</span><span class="faq-q" data-scramble>Quanto custa um sistema sob medida?</span><span class="faq-chevron" aria-hidden="true">&#8250;</span></summary>
+        <div class="faq-a"><p>O número sai do processo, não da quantidade de telas. Primeiro mapeamos o fluxo, depois fechamos um valor por etapa, com o custo adicional já nomeado caso o escopo mude. Você assina sabendo o que está comprando.</p></div>
+        <span class="faq-underline" aria-hidden="true"></span>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-num">02</span><span class="faq-q" data-scramble>Quanto tempo leva até estar em produção?</span><span class="faq-chevron" aria-hidden="true">&#8250;</span></summary>
+        <div class="faq-a"><p>A primeira versão em uso real costuma levar de 8 a 14 semanas. Entregamos em ciclos, então parte do sistema entra em produção antes do projeto terminar. O prazo nasce do mapeamento, não de um chute na reunião.</p></div>
+        <span class="faq-underline" aria-hidden="true"></span>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-num">03</span><span class="faq-q" data-scramble>E se eu quiser trocar de fornecedor depois?</span><span class="faq-chevron" aria-hidden="true">&#8250;</span></summary>
+        <div class="faq-a"><p>Você troca. O repositório, a documentação e a propriedade intelectual são seus desde o primeiro commit e ficam com você no handover. Nenhum cliente nosso continua conosco por não ter para onde ir.</p></div>
+        <span class="faq-underline" aria-hidden="true"></span>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-num">04</span><span class="faq-q" data-scramble>Vocês integram com o ERP que eu já uso?</span><span class="faq-chevron" aria-hidden="true">&#8250;</span></summary>
+        <div class="faq-a"><p>Integramos. Trabalhamos com os ERPs de mercado, marketplaces, gateways, transportadoras e sistemas legados. Quando não existe API, resolvemos pelo caminho possível e deixamos documentado o que foi feito e por quê.</p></div>
+        <span class="faq-underline" aria-hidden="true"></span>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-num">05</span><span class="faq-q" data-scramble>Quem fica com a manutenção depois do go-live?</span><span class="faq-chevron" aria-hidden="true">&#8250;</span></summary>
+        <div class="faq-a"><p>Você escolhe. Podemos sustentar o sistema com SLA definido e monitoramento ativo, ou treinar o seu time e entregar a documentação para ele assumir. Nos dois casos o sistema continua sendo seu.</p></div>
+        <span class="faq-underline" aria-hidden="true"></span>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-num">06</span><span class="faq-q" data-scramble>Meus dados ficam seguros?</span><span class="faq-chevron" aria-hidden="true">&#8250;</span></summary>
+        <div class="faq-a"><p>Os dados moram na infraestrutura que você aprovar, com acesso por perfil, backup e registro de quem fez o quê. A LGPD entra no desenho do banco, não como remendo no fim do projeto.</p></div>
+        <span class="faq-underline" aria-hidden="true"></span>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     7. CTA FINAL
+     ============================================================ -->
+<section class="section cta" id="contato" data-hud="CONTATO">
+  <div class="container cta-inner">
+    <h2 class="h2" data-split><span class="brace">{</span>Comece pelo diagnóstico, não pela proposta.<span class="brace">}</span></h2>
+    <p class="lead" data-reveal-item>45 minutos com quem vai construir o sistema, não com vendedor. Você sai com o problema nomeado, o caminho técnico e uma faixa de investimento. Se não fizer sentido, a gente diz na hora.</p>
+    <div class="cta-actions" data-reveal-item>
+      <a class="btn btn--fill" href="https://wa.me/5547991521735?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Rare%20Tech%20e%20quero%20agendar%20o%20diagn%C3%B3stico%20de%2045%20minutos." target="_blank" rel="noopener" data-scramble data-cursor="agendar">Agendar diagnóstico</a>
+      <a class="btn btn--darker" href="https://wa.me/5547991521735?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Rare%20Tech%20e%20quero%20falar%20sobre%20um%20projeto." target="_blank" rel="noopener" data-scramble data-cursor="abrir">Falar pelo WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================================
+     8. FOOTER
+     ============================================================ -->
+<footer class="site-footer" data-hud="RARE TECH" data-theme="light">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-contact">
+        <p><a href="mailto:contato@raretech.com.br" data-cursor="abrir">contato@raretech.com.br</a></p>
+        <p><a href="tel:+5547991521735">+55 47 99152-1735</a></p>
+        <p>Rua sete de setembro, 105. apto104</p>
+      </div>
+      <div class="footer-legal">
+        <p>RARE TECH LTDA · CNPJ 47.201.371/0001-79</p>
+        <p>Desenvolvimento e licenciamento de programas de computador</p>
+      </div>
+    </div>
+
+    <div class="footer-wordmark" data-reveal-item>
+      <img src="src/svg/logo2.svg" alt="Rare Tech" width="1439" height="190" id="footerWordmark">
+    </div>
+
+    <div class="footer-base">
+      <p>2026 Rare Tech. Todos os direitos reservados.</p>
+      <p><a href="#">Política de Privacidade</a> · <a href="#">Termos de Uso</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     HUD DE SCROLL
+     ============================================================ -->
+<div class="hud" id="hud" aria-hidden="true"><b id="hudBits">00000000</b><b id="hudSection">INÍCIO</b></div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

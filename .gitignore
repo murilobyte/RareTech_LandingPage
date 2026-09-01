@@ -1,0 +1,9 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Vercel
+.vercel
+
+# Node (caso um dia entre build step)
+node_modules/
